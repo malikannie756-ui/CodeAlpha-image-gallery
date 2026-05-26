@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Image Gallery</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#111;
+    color:white;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:40px;
+    color:#00ff99;
+}
+
+.buttons{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.buttons button{
+    padding:12px 20px;
+    margin:5px;
+    border:none;
+    border-radius:10px;
+    background:#00cc66;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.buttons button:hover{
+    background:#00ff99;
+    transform:scale(1.05);
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.image{
+    overflow:hidden;
+    border-radius:15px;
+    height:250px;
+    cursor:pointer;
+}
+
+.image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.image:hover img{
+    transform:scale(1.1);
+}
+
+/* Lightbox */
+
+.lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox img{
+    width:80%;
+    max-width:800px;
+    border-radius:20px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Responsive Image Gallery</h1>
+<p class="para">
+    Welcome to my Responsive Image Gallery project created using HTML, CSS, and JavaScript. 
+    This gallery contains beautiful collections of House, Animals, Flowers, Cities, Computers, and Parks. 
+    The website is fully responsive and works smoothly on mobile phones, tablets, and desktop screens. 
+    It also includes hover effects, category filters, smooth transitions, and a lightbox image preview 
+    to provide an attractive and user-friendly experience for visitors.
+    </p>
+    
+
+<div class="buttons">
+    <button onclick="filterImages('all')">All</button>
+    <button onclick="filterImages('nature')">Nature</button>
+    <button onclick="filterImages('animals')">Animals</button>
+    <button onclick="filterImages('city')">Cities</button>
+    <button onclick="filterImages('flowers')">Flowers</button>
+    <div class="buttons">
+      <button onclick="filterImages('home')">House</button>
+      <button onclick="filterImages('computer')">Computer</button>
+      <button onclick="filterImages('countries')">Countries</button>
+      <button onclick="filterImages('parks')">Parks</button>
+  </div>
+
+</div>
+
+<div class="gallery">
+
+<!-- PAKISTAN BEAUTIFUL PLACE -->
+<div class="image nature">
+  <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- AMAZON FOREST -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- WATERFALL -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- MOUNTAINS -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- GREEN FOREST -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- LAKE VIEW -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- SNOW PLACE -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- DESERT -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- RIVER VIEW -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- SUNSET NATURE -->
+  <div class="image nature">
+  <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+<!-- LION -->
+<div class="image animals">
+  <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- TIGER -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- ELEPHANT -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HORSE -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- CAT -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- DOG -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- PANDA -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- DEER -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- RABBIT -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- FOX -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- PARROT -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+<!-- PEACOCK -->
+<div class="image animals">
+<img src="https://picsum.photos/id/593/1200/800" onclick="openLightbox(this.src)">
+</div>
+  
+  <!-- WOLF -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- MONKEY -->
+  <div class="image animals">
+  <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+<!-- DUCK -->
+<div class="image animals">
+  <img src="https://picsum.photos/id/659/1200/800" onclick="openLightbox(this.src)">
+  </div>
+
+<!-- Cities -->
+<div class="image city">
+<img src="https://picsum.photos/id/1031/600/400" onclick="openLightbox(this.src)">
+</div>
+<div class="image city">
+    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1470219556762-1771e7f9427d?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+  
+  <div class="image city">
+    <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1200&auto=format&fit=crop" alt="">
+  </div>
+<div class="image city">
+<img src="https://picsum.photos/id/1043/600/400" onclick="openLightbox(this.src)">
+</div>
+
+<!-- Flowers -->
+<div class="image flowers">
+<img src="https://picsum.photos/id/106/600/400" onclick="openLightbox(this.src)">
+</div>
+<div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1496065187959-7f07b8353c55?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1457089328109-e5d9bd499191?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+  </div>
+  
+  <div class="image flowers">
+    <img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=1200&auto=format&fit=crop" onclick="openLightbox(this.src)">
+  </div>
+<div class="image flowers">
+<img src="https://picsum.photos/id/107/600/400" onclick="openLightbox(this.src)">
+</div>
+<!-- HOUSE IMAGE 1 -->
+<div class="image home">
+  <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 2 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 3 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 4 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 5 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 6 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 7 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 8 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 9 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=600" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- HOUSE IMAGE 10 -->
+  <div class="image home">
+  <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600" onclick="openLightbox(this.src)">
+  </div>
+  <!-- COMPUTER IMAGE 1 -->
+<div class="image computer">
+  <img src="https://picsum.photos/id/180/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 2 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/0/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 3 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/1/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 4 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/48/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 5 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/60/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 6 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/119/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 7 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/160/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 8 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/201/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 9 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/250/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- COMPUTER IMAGE 10 -->
+  <div class="image computer">
+  <img src="https://picsum.photos/id/366/1200/800" onclick="openLightbox(this.src)">
+  </div>
+  <!-- JAPAN -->
+<div class="image countries">
+  <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- SOUTH KOREA -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- GERMANY -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- LONDON -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1488747279002-c8523379faaa?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- ITALY -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- FRANCE -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- DUBAI -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- TURKEY -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- CANADA -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- SWITZERLAND -->
+  <div class="image countries">
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  <!-- JAPAN PARK -->
+<div class="image parks">
+  <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- ITALY PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- KOREA PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- GERMANY PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- LONDON PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- FRANCE PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- CANADA PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- SWITZERLAND PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- TURKEY PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+  
+  <!-- DUBAI PARK -->
+  <div class="image parks">
+  <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?fm=jpg&q=90&w=1200" onclick="openLightbox(this.src)">
+  </div>
+
+
+
+
+
+
+
+<!-- Lightbox -->
+
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeLightbox()">×</span>
+<img id="lightbox-img">
+</div>
+
+<script>
+
+function filterImages(category){
+
+    let images=document.querySelectorAll(".image");
+
+    images.forEach(image=>{
+
+        if(category=="all"){
+            image.style.display="block";
+        }
+
+        else if(image.classList.contains(category)){
+            image.style.display="block";
+        }
+
+        else{
+            image.style.display="none";
+        }
+
+    });
+}
+
+function openLightbox(src){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightbox-img").src=src;
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
